@@ -39,13 +39,13 @@ const handlePrev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.
   })
 
   return (
-    <div className='relative w-full h-[400px] overflow-hidden rounded-lg shadow-lg'>
+    <div className='relative w-full h-[350px] overflow-hidden rounded-lg shadow-lg'>
     <img src={slides[index].image} 
     alt={slides[index].title}
     className='w-full h-full object-cover transition duration-700 ease-in-out'
      />
     <div className='absolute inset-0 bg-black/40 flex flex-col justify-center text-white text-center px-6'>
-      <h1 className='text-3xl font-semibold mb-2'>{slides[index].title}</h1>
+      <h1 className='text-3xl font-semibold mb-2 drop-shadow-lg'>{slides[index].title}</h1>
       <p className='text-lg'>{slides[index].desc}</p>
     </div>
 
@@ -56,7 +56,7 @@ const handlePrev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.
   {'>'}
 </button>
 
-<button onClick={handlePrev} className='absolute  left-4 top-1/2 px-4 py-2 rounded-full -translate-y-1/2 text-white text-4xl'>{'<'}</button>
+<button onClick={handlePrev} className='absolute  left-4 top-1/2 px-4 py-2 rounded-full -translate-y-1/2 text-white text-4xl hover:scale-105 transition duration-300'>{'<'}</button>
 
 
 
