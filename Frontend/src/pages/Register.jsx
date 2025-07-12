@@ -22,6 +22,7 @@ const Register = () => {
 
             const data = await res.json();
 
+           //if it response store it into localStorage
             if(res.ok) {
                 localStorage.setItem('user', JSON.stringify(data.user));
                 navigate('/');
@@ -35,6 +36,7 @@ const Register = () => {
 
   } 
 
+     //handle google register success
     const handleGoogleSuccess = (credentialResponse) => {
         if(credentialResponse.credential) {
         const userData = jwtDecode(credentialResponse.credential)

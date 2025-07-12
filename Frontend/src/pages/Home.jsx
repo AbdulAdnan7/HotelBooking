@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import HotelList from './HotelList';
 
 const Home = () => {
  
@@ -35,10 +36,13 @@ const [index, setIndex] = useState(0);
 const handleNext = () => setIndex((prev) => (prev + 1) % slides.length)
 const handlePrev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length)
   useEffect(() => {
-    const timer = setInterval(() => {})
-  })
+    const timer = setInterval(handleNext, 5000);
+    return  () => clearInterval(timer)
+  }, [])
 
   return (
+    <>
+    <section>
     <div className='relative w-full h-[350px] overflow-hidden rounded-lg shadow-lg'>
     <img src={slides[index].image} 
     alt={slides[index].title}
@@ -57,10 +61,32 @@ const handlePrev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.
 </button>
 
 <button onClick={handlePrev} className='absolute  left-4 top-1/2 px-4 py-2 rounded-full -translate-y-1/2 text-white text-4xl hover:scale-105 transition duration-300'>{'<'}</button>
+    </div>
 
-
+    <div>
 
     </div>
+    </section>
+    <section className="py-12 bg-white text-center">
+  <h2 className="text-3xl font-bold text-purple-600 mb-6">Why Stay With Us?</h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+    <div className="p-6 bg-gray-100 rounded shadow">
+      <h3 className="text-xl font-semibold mb-2">Free Wi-Fi</h3>
+      <p>Enjoy unlimited internet during your stay.</p>
+    </div>
+    <div className="p-6 bg-gray-100 rounded shadow">
+      <h3 className="text-xl font-semibold mb-2">Luxury Rooms</h3>
+      <p>Spacious, comfortable rooms with modern design.</p>
+    </div>
+    <div className="p-6 bg-gray-100 rounded shadow">
+      <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
+      <p>We’re always here for your service, day or night.</p>
+    </div>
+  </div>
+</section>
+
+ <HotelList />
+    </>
   )
 }
 

@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Footer from './components/Footer'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import AddHotel from './pages/admin/AddHotel'
+import ManageHotels from './pages/admin/ManageHotels'
 
 function App() {
   const route = createBrowserRouter([
@@ -20,8 +22,22 @@ function App() {
       element: <Login />
     },
     {
+       path: '/admin/add',
+       element: <div>
+        <Navbar />
+        <AddHotel />
+       </div>
+    },
+    {
       path: '/register',
       element: <Register />
+    },
+    {
+      path: '/admin/dashboard',
+      element: <div>
+        <Navbar />
+        <ManageHotels />
+      </div>
     }
   ])
 

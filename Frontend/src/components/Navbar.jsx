@@ -16,6 +16,15 @@ const Navbar = () => {
                 <NavLink to='/' className={({ isActive }) => `text-sm font-medium transition hover:text-purple-500 ${ isActive ? 'text-purple-600' : 'text-gray-700'}`}>
                     Home
                 </NavLink>
+                <NavLink to='/rooms' className={({ isActive }) => `text-sm font-medium transition hover:text-purple-500 ${ isActive ? 'text-purple-600' : 'text-gray-700'}`}>
+                    Rooms
+                </NavLink>
+                 <NavLink to='/admin/add' className={({ isActive }) => `text-sm font-medium transition hover:text-purple-500 ${ isActive ? 'text-purple-600' : 'text-gray-700'}`}>
+                    Add Hotel
+                </NavLink>
+                <NavLink to='/contact' className={({ isActive }) => `text-sm font-medium transition hover:text-purple-500 ${ isActive ? 'text-purple-600' : 'text-gray-700'}`} >
+                    Contact
+                </NavLink>
                 <NavLink to='/login'>
                     <button className='bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition'>Login</button>
                 </NavLink>
